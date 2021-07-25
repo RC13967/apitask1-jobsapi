@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+body{
+  place-items: center;
+  background-color: rgb(161, 144, 152);
+}
+
+.page-div {
+  position: sticky;
+  top: 0px;
+}
+
+.job-list {
+  margin-top: 50px;
+}
+
+.job-container {
+  background-color: rgb(209, 209, 228);
+    padding: 10px;
+    margin : 15px;
+    border-radius: 16px;
+    font-family: Poppins;
+    justify-content: center;
+    transition: all 200ms;
+  }
+  
+.job-title {
+  color: rgb(17, 0, 255);
+  font-weight: bolder;
+}
+
+.job-company {
+  color:rgb(255, 0, 149)
+}
+
+.job-created-time {
+  color: rgb(100, 35, 90);
+}
+
+.job-link{
+  color: rgb(255, 0, 0);
+}
+
+.job-description {
+  display:none;
+}
+
+button{
+    background-color: rgb(196, 214, 144);
+    color:rgb(36, 66, 0);
+    border-radius: 8px;
+    height: 33px;
+    padding: 5px;
+    
+}
+
+.new-job-name{
+    background-color: rgb(209, 196, 200);
+    color:rgb(80, 110, 23);
+    border-radius: 8px;
+    height: 25px;
+    padding: 2px 25px 2px 5px;
+  }
+
+
