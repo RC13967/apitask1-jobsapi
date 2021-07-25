@@ -7,6 +7,13 @@ body{
 .page-div {
   position: sticky;
   top: 0px;
+  background-color: rgb(170, 190, 172);
+  padding: 10px;
+  border-radius: 8px;
+}
+.page-button {
+  padding: 7px;
+  margin: 2px ;
 }
 
 .job-list {
@@ -45,14 +52,16 @@ body{
 }
 
 button{
-    background-color: rgb(196, 214, 144);
-    color:rgb(36, 66, 0);
+    background-color: rgb(180, 25, 211);
+    color:rgb(238, 234, 183);
     border-radius: 8px;
-    height: 33px;
-    padding: 5px;
+    padding: 7px;
     
 }
-
+.toggle-desc {
+  background-color: chocolate;
+  color:floralwhite
+}
 .new-job-name{
     background-color: rgb(209, 196, 200);
     color:rgb(80, 110, 23);
