@@ -17,6 +17,10 @@ function pagination (startidx){
   
    pagediv.append(pagebutton);
    pagebutton.onclick = function (){
+     if(document.querySelector("#clickedpagebutton") != null){
+      document.querySelector("#clickedpagebutton").removeAttribute("id");
+     }
+     pagebutton.setAttribute("id","clickedpagebutton");
      localStorage.setItem("clickedpage",i)
      getjobs();
    }
