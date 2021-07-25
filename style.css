@@ -69,5 +69,8 @@ button{
     height: 25px;
     padding: 2px 25px 2px 5px;
   }
-
+#clickedpagebutton {
+background-color: beige;
+color: blue;
+}
 
