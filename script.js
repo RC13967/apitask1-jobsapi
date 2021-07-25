@@ -3,6 +3,7 @@ function pagination (){
  pagediv.className = "page-div";
  for(let i = 1;i<=100;i++){
    const pagebutton = document.createElement("button");
+   pagebutton.className= "page-button"
    pagebutton.innerHTML = i;
    pagediv.append(pagebutton);
    pagebutton.onclick = function (){
