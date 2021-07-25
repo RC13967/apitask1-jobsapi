@@ -89,7 +89,7 @@ function nextitems(){
       const jobContainer = document.createElement("div");
       jobContainer.className = "job-container";
       if(job.locations[0]==undefined){
-        j0b.locations[0].name = "unknown";
+        job.locations[0].name = "unknown";
       }
   
       jobContainer.innerHTML = `
@@ -100,7 +100,7 @@ function nextitems(){
       <div class="job-location">location : ${job.locations[0].name}</div>
       <div class="job-type">Type : ${job.type} ${job.model_type}</div>
       <div class="job-created-time" >published date : ${new Date(job.publication_date).toDateString()}</div>
-      <a class="job-link" href = "${job.redirect_url}"> apply link</a></div>
+      <a class="job-link" href = "${job.refs.landing_page}"> apply link</a></div>
       `;
       const toggledescription = document.createElement("button");
       toggledescription.className = "toggle-desc";
