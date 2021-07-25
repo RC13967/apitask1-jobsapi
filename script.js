@@ -1,18 +1,56 @@
-function pagination (){
+function pagination (startidx){
  const pagediv =  document.createElement("div");
  pagediv.className = "page-div";
- for(let i = 1;i<=100;i++){
+ const firstpage = document.createElement("button");
+ firstpage.innerHTML = "first";
+ pagediv.append(firstpage);
+ firstpage.onclick = function(){
+    document.querySelector(".page-div").remove();
+    if(document.querySelector(".job-list") != null){
+      document.querySelector(".job-list").remove()}
+   pagination(1);
+ }
+ for (let i = +startidx;i<= +startidx +10;i++){
    const pagebutton = document.createElement("button");
    pagebutton.className= "page-button"
    pagebutton.innerHTML = i;
+  
    pagediv.append(pagebutton);
    pagebutton.onclick = function (){
      localStorage.setItem("clickedpage",i)
      getjobs();
    }
+   
  }
+ const nextbutton = document.createElement("button");
+ nextbutton.innerHTML = `${+startidx + 11}-${+startidx + 20}`;
+ if (startidx==89){
+  nextbutton.innerHTML = "1-11";
+  
+ }
+ pagediv.append(nextbutton);
+ nextbutton.onclick = function () {
+   localStorage.setItem("currentindex",startidx);
+   nextitems();
+ }
+
  
 document.body.append(pagediv);
+}
+
+function nextitems(){
+  var currentindex = localStorage.getItem("currentindex");
+  
+  if(document.querySelector(".page-div") != null){
+    document.querySelector(".page-div").remove()}
+    if(document.querySelector(".job-list") != null){
+      document.querySelector(".job-list").remove()}
+      if(currentindex < 89){
+  pagination(+currentindex + 11)}
+  else if (currentindex >= 89){
+    pagination(1);
+  }
+
 }
 
   async function getjobs() {
