@@ -17,10 +17,10 @@ function pagination (startidx){
   
    pagediv.append(pagebutton);
    pagebutton.onclick = function (){
-     if(document.querySelector("#clickedpagebutton") != null){
-      document.querySelector("#clickedpagebutton").removeAttribute("id");
+     if(document.querySelector(".clickedpagebutton") != null){
+      document.querySelector(".clickedpagebutton").removeAttribute("class");
      }
-     pagebutton.setAttribute("id","clickedpagebutton");
+     pagebutton.setAttribute("class","clickedpagebutton");
      localStorage.setItem("clickedpage",i)
      getjobs();
    }
@@ -70,10 +70,15 @@ function nextitems(){
       }
     );
     
-      const jobjson = await data.json();
+      try{
+        const jobjson = await data.json();
     const jobs = jobjson.results;
     loadjobs(jobs);
     console.log(jobs[0]);
+      }
+      catch{
+        alert("check your connection");
+      }
     
     }
 
@@ -110,9 +115,9 @@ function nextitems(){
       jobdescription.innerHTML = job.contents;
       jobContainer.append(jobdescription,toggledescription);
       toggledescription.onclick = function (){
-        if(document.querySelector("#descid") != null){
-        document.querySelector("#descid").removeAttribute("id");}
-        jobdescription.setAttribute("id","descid");
+        if(document.querySelector(".descid") != null){
+        document.querySelector(".descid").removeAttribute("class");}
+        jobdescription.setAttribute("class","descid");
         toggledesc();
       }
   
@@ -122,7 +127,7 @@ function nextitems(){
     document.body.append(jobList);
   }
    function toggledesc() {
-    var x =  document.querySelector("#descid")
+    var x =  document.querySelector(".descid")
     if (x.style.display === "none" || x.style.display === "") {
       x.style.display = "block";
     } else {
