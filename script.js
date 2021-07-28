@@ -78,7 +78,7 @@ function nextitems(){
     loadjobs(jobs); //calling a function to print the data
       }
       catch{
-        alert("check your connection"); //alerts user if any error occurs
+        alert("New jobs are being added to this page. please check after some time."); //alerts user if any error occurs
       }
     
     }
